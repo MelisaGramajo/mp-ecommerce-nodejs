@@ -84,7 +84,10 @@
                                     {{ unit }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                            <form action="/mercadoPago?title={{title}}&price={{price}}&unit={{unit}}" method="post">
+                                <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                            </form>
+                        
                         </div>
                     </div>
                 </div>
