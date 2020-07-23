@@ -85,8 +85,9 @@ app.post('/mercadoPago', function (req, res) {
 
     mercadopago.preferences.create(preference)
         .then(function (response) {
-            console.log(respose);
+          
            res.redirect(response.body.init_point);
+           console.log("respuesta:::",response);
         }).catch(function (err) {
             console.log(err);
         });
