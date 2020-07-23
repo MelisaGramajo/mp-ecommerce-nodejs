@@ -84,7 +84,7 @@ app.post('/mercadoPago', function (req, res) {
             failure: "https://melisagramajo-mp-commerce-node.herokuapp.com/fail"
         },
         auto_return: "approved",
-        notification_url: "http://requestbin.fullcontact.com/1ogudgk1"
+        notification_url: "https://melisagramajo-mp-commerce-node.herokuapp.com/webhooks"
     };
 
     mercadopago.preferences.create(preference)
