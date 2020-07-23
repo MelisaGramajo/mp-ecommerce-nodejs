@@ -80,6 +80,7 @@ app.post('/mercadoPago', function (req, res) {
             failure: "https://melisagramajo-mp-commerce-node.herokuapp.com/fail"
         },
         auto_return: "approved",
+        notification_url: "https://melisagramajo-mp-commerce-node.herokuapp.com/",
     };
 
     mercadopago.preferences.create(preference)
@@ -94,7 +95,8 @@ app.post('/mercadoPago', function (req, res) {
 
   //configure mercado pago
   mercadopago.configure({
-    access_token:  process.env.ACCESS_TOKEN
+    access_token:  process.env.ACCESS_TOKEN,
+    integrator_id: process.env.INTEGRATOR_ID
   });
 
 app.use(express.static('assets'));
