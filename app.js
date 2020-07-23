@@ -80,11 +80,12 @@ app.post('/mercadoPago', function (req, res) {
             failure: "https://melisagramajo-mp-commerce-node.herokuapp.com/fail"
         },
         auto_return: "approved",
-        notification_url: "https://melisagramajo-mp-commerce-node.herokuapp.com/",
+        notification_url: "https://melisagramajo-mp-commerce-node.herokuapp.com/success",
     };
 
     mercadopago.preferences.create(preference)
         .then(function (response) {
+            console.log(respose);
            res.redirect(response.body.init_point);
         }).catch(function (err) {
             console.log(err);
