@@ -29,8 +29,8 @@ app.get('/pending', function (req, res) {
 });
 
 app.post('/webhooks', function (req, res) {
-  console.log("WEBHOOKS:::",res.body);
-  res.send(res.body);
+  console.log("WEBHOOKS:::",req.body);
+  res.send(req.body);
 });
 
 
