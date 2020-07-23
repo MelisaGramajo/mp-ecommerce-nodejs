@@ -41,11 +41,12 @@ app.post('/mercadoPago', function (req, res) {
                 description: "Dispositivo móvil de Tienda e-commerce",
                 picture_url: "https://http2.mlstatic.com/celular-samsung-galaxy-m10-liberado-D_NQ_NP_855147-MLA31630524442_072019-F.jpg",
                 unit_price: parseInt(req.query.price),
-                quantity: parseInt(req.query.unit),
-                external_reference: 'melisargramajo@gmail.com'
+                quantity: parseInt(req.query.unit)
+                
                 
             }
         ],
+        external_reference: 'melisargramajo@gmail.com',
         payer: {
             name: 'Lalo',
             surname: 'Landa',
@@ -74,7 +75,7 @@ app.post('/mercadoPago', function (req, res) {
             installments: 6,
         },
         back_urls: {
-            success: "https://melisagramajo-mp-commerce-node.herokuapp.com/success?collection_id=[PAYMENT_ID]&collection_status=approved&external_reference=[EXTERNAL_REFERENCE]&payment_type=credit_card&preference_id=[PREFERENCE_ID]&site_id=[SITE_ID]&processing_mode=aggregator&merchant_account_id=null",
+            success: "https://melisagramajo-mp-commerce-node.herokuapp.com/success",
             pending: "https://melisagramajo-mp-commerce-node.herokuapp.com/pending",
             failure: "https://melisagramajo-mp-commerce-node.herokuapp.com/fail"
         },
