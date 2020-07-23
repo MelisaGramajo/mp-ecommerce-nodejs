@@ -29,9 +29,8 @@ app.get('/pending', function (req, res) {
 });
 
 app.post('/webhooks', function (req, res) {
-  console.log("WEBHOOKS:::",req.query);
- 
-  res.redirect("https://api.mercadopago.com/v1/payments/"+req.query.id+"?access_token="+process.env.ACCESS_TOKEN);
+   res.send({ success: true, data: req.body });
+   console.log("Request body:", req.body)
 });
 
 
@@ -110,7 +109,9 @@ app.post('/mercadoPago', function (req, res) {
 app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
- 
+
+app.use(express.json())
+
 const port = normalizePort(process.env.PORT || '3000'); 
 app.set('port', port);
 app.listen(port);
