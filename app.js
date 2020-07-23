@@ -29,7 +29,8 @@ app.get('/pending', function (req, res) {
 });
 
 app.post('/webhooks', function (req, res) {
-  console.log("WEBHOOKS:::",req.body);
+  console.log("WEBHOOKS:::",req.query.id);
+ 
   res.redirect("https://api.mercadopago.com/v1/payments/"+req.query.id+"?access_token="+process.env.ACCESS_TOKEN);
 });
 
