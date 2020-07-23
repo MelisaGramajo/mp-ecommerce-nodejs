@@ -28,7 +28,7 @@ app.get('/pending', function (req, res) {
     res.render('pending', req.query);
 });
 
-app.get('/webhooks', function (req, res) {
+app.post('/webhooks', function (req, res) {
   console.log("WEBHOOKS:::",res.body);
 });
 
