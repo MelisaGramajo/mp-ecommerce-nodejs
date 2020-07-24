@@ -28,6 +28,7 @@ app.get('/pending', function (req, res) {
     res.render('pending', req.query);
 });
 
+app.use(express.json());
 app.post('/webhooks', function (req, res) {
    res.send({ success: true, data: req.body });
    console.log("Request body:", req.body)
@@ -110,7 +111,7 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.use(express.json())
+
 
 const port = normalizePort(process.env.PORT || '3000'); 
 app.set('port', port);
